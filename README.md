@@ -23,22 +23,27 @@ to one** category.
 
 `/categories` - retrieves all categories
 
+`/categories/new` - retrieves new category form
+
 `/categories/:categoryId` - retrieves specific information about a category of
 id _categoryId_
 
 `/categories/:categoryId/items` - retrieves all items in the category of id
 _categoryId_
 
+`/categories/:categoryId/items/new` - retrieves new item form for the category
+of id _categoryId_
+
 `/categories/:categoryId/items/:itemId` - retrieves a item of id _itemId_ in
 the category of id _categoryId_
 
 ### POST requests
 
-`/categories` - creates a new category
+`/categories/new` - creates a new category
 
 `/categories/:categoryId` - updates category of id _categoryId_
 
-`/categories/:categoryId/items` - creates an item in the category of id
+`/categories/:categoryId/items/new` - creates an item in the category of id
 _categoryId_
 
 `/categories/:categoryId/items/:itemId` - updates a item of id _itemId_ in the
@@ -46,16 +51,11 @@ category of id _categoryId_
 
 ### DELETE requests
 
-`/categories/delete` - deletes all categories
-
 `/categories/:categoryId/delete` - deletes a category of id _categoryId_
-
-`/categories/:categoryId/items/delete` - deletes all items in the category of
-id _categoryId_
 
 `/categories/:categoryId/items/:itemId/delete` - deletes the item of id
 _itemId_ in the category of id _categoryId_
 
-> **All DELETE requests enforce `CASCADE DELETE.`** This means that, e.g.,
-> deleting a category will delete all items associated with that category (via
-> the _categoryId_ foreign key).
+> **All categories DELETE requests enforce `CASCADE DELETE.`** This means that,
+> e.g., deleting a category will delete all items associated with that category
+> (via the _categoryId_ foreign key).
