@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Computer Inventory Application</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+
+  <body>
+    <div class="update-category-page">
+      <% if (locals.category) { %>
+        <h1>Category id <%= category.id %></h1>
+
+        <%- include("../errors/errors.ejs") %>
+        
+        <form class="update-category-form" action="/categories/<%= category.id %>" method="post">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" value="<%= category.name %>" required/>
+          <button type="submit">Update</button>
+        </form>
+
+      <a href="/categories"><button type="button" tabindex="-1">Back</button></a>
+      <% } else { %>
+        <h1>Category does not exist!</h1>
+      <% } %>
+    </div>
+  </body>
+</html>

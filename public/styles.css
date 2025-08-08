@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --ut-orange: #ff8811;
+  --jordy-blue: #8eb8e5;
+  --space-cadet: #392f5a;
+  --dark-green: #17301c;
+  --burnt-umber: #983628;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+
+  background-color: var(--jordy-blue);
+
+  font-family: sans-serif;
+  color: var(--space-cadet);
+
+  cursor: default;
+}
+
+button {
+  will-change: tranform;
+  transition: transform 0.3s ease-in-out;
+
+  cursor: pointer;
+
+  border: 2px solid var(--space-cadet);
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+body > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  width: 100%;
+
+  padding: 0 100px;
+}
+
+body > div h1 {
+  font-size: 2.4rem;
+
+  text-align: center;
+}
+
+body > div h2 {
+  font-size: 2.2rem;
+}
+
+body > div p,
+body > div a {
+  font-size: 1.2rem;
+}
+
+body > div a,
+body > div a:visited {
+  font-weight: bold;
+  color: var(--space-cadet);
+}
+
+.welcome-page .proceed-link {
+  width: max-content;
+
+  margin: 0 auto;
+}
+
+.welcome-page button,
+.new-category-page button,
+.update-category-page button,
+.new-item-page button,
+.update-item-page button {
+  width: 200px;
+
+  padding: 10px;
+
+  border-radius: 20px;
+
+  font-size: 1.2rem;
+
+  background-color: var(--ut-orange);
+}
+
+.categories-page .categories-container,
+.items-page .items-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  justify-content: center;
+  gap: 20px;
+}
+
+.categories-page .category-container,
+.items-page .item-container {
+  padding: 10px;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+
+  background-color: var(--ut-orange);
+
+  border-radius: 20px;
+}
+
+.categories-page .category-link,
+.items-page .item-link {
+  text-decoration: none;
+}
+
+.categories-page .category-container .category-name,
+.categories-page .category-container .category-name button,
+.items-page .item-container .item-name {
+  height: 100%;
+}
+
+.categories-page .category-container .category-name,
+.items-page .item-container .item-name {
+  grid-row: 1 / -1;
+}
+
+.items-page .item-container .item-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.categories-page .category-container .category-name button {
+  font-size: 1.5rem;
+}
+
+.categories-page .category-container button,
+.categories-page > a button,
+.items-page .item-container button,
+.items-page > a button {
+  padding: 10px;
+
+  border-radius: 20px;
+
+  background-color: var(--space-cadet);
+
+  color: var(--ut-orange);
+
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.categories-page .category-container button,
+.items-page .item-container button {
+  width: 100%;
+}
+
+.categories-page > a,
+.items-page > a {
+  width: max-content;
+}
+
+.new-category-page,
+.update-category-page,
+.new-item-page,
+.update-item-page {
+  align-items: center;
+}
+
+.new-category-page .new-category-form,
+.update-category-page .update-category-form,
+.new-item-page .new-item-form,
+.update-item-page .update-item-form {
+  width: 500px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.new-category-page .new-category-form label,
+.new-category-page .new-category-form input,
+.update-category-page .update-category-form label,
+.update-category-page .update-category-form input,
+.new-item-page .new-item-form label,
+.new-item-page .new-item-form input,
+.update-item-page .update-item-form label,
+.update-item-page .update-item-form input {
+  font-size: 1.4rem;
+}
+
+.new-category-page .new-category-form label,
+.update-category-page .update-category-form label,
+.new-item-page .new-item-form label,
+.update-item-page .update-item-form label {
+  font-weight: bold;
+}
+
+.new-category-page .new-category-form input,
+.update-category-page .update-category-form input,
+.new-item-page .new-item-form input,
+.update-item-page .update-item-form input {
+  padding: 5px 10px;
+
+  border-radius: 20px;
+  border: 2px solid var(--dark-green);
+}
+
+.new-category-page .new-category-form button,
+.update-category-page .update-category-form button,
+.new-item-page .new-item-form button,
+.update-item-page .update-item-form button,
+.categories-page > a,
+.items-page > a {
+  margin: 0 auto;
+}
+
+.errors-list li {
+  font-size: 1.4rem;
+  color: var(--burnt-umber);
+}

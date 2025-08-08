@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Computer Inventory Application</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+
+  <body>
+    <div class="update-item-page">
+      <% if (locals.item) { %>
+        <h1>Item id <%= item.id %></h1>
+
+        <%- include("../errors/errors.ejs") %>
+        
+        <form 
+          class="update-item-form"
+          action="/categories/<%= categoryId %>/items/<%= item.id %>" 
+          method="post"
+        >
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" value="<%= item.name %>" required/>
+          <label for="quantity">Quantity</label>
+          <input type="number" name="quantity" id="quantity" value="<%= item.quantity %>" required>
+          <button type="submit">Update</button>
+        </form>
+
+      <a href="/categories/<%= categoryId %>/items"><button type="button" tabindex="-1">Back</button></a>
+      <% } else { %>
+        <h1>Item does not exist!</h1>
+      <% } %>
+    </div>
+  </body>
+</html>

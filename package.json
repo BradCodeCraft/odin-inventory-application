@@ -1,0 +1,22 @@
+{
+  "name": "odin-inventory-application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./app.js",
+    "dev": "node --env-file=./.env --watch ./app.js",
+    "create-tables": "node --env-file=./.env ./db/createTables.js",
+    "populate-data": "node --env-file=./.env ./db/populateData.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-validator": "^7.2.1",
+    "pg": "^8.16.3"
+  }
+}

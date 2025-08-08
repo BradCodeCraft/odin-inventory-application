@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Computer Inventory Application</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+
+  <body>
+    <div class="items-page">
+      <h1>Items</h1>
+      <% if (locals.items) { %>
+        <div class="items-container">
+          <% items.forEach((item) => { %>
+            <div class="item-container">
+              <p class="item-name"><%= item.name %></p>
+              <a class="item-link" href="/categories/<%= categoryId %>/items/<%= item.id %>">
+                <button type="button">Edit</button>
+              </a>
+              <form 
+                action="/categories/<%= categoryId %>/items/<%= item.id %>/delete"
+                method="post"
+                onsubmit="return confirm('Are you sure you want to delete <%= item.name %> item?')"
+              >
+                <button type="submit">Delete</button>
+              </form>
+            </div>
+          <% }) %>
+        </div>
+      <% } %>
+
+      <a href="/categories/<%= categoryId %>/items/new"><button type="button" tabindex="-1">Add a new item</button></a>
+      <a href="/categories"><button type="button" tabindex="-1">Back</button></a>
+    </div>
+  </body>
+</html>
